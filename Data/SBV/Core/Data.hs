@@ -62,7 +62,7 @@ module Data.SBV.Core.Data
  , QueryState(..), QueryT(..), SMTProblem(..)
  ) where
 
-import GHC.TypeLits
+import GHC.TypeLits hiding (SChar)
 
 import GHC.Generics (Generic)
 import GHC.Exts     (IsList(..))

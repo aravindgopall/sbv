@@ -33,6 +33,7 @@ import Data.Maybe
 
 import qualified Data.Map.Strict          as M
 import qualified Control.Monad.State.Lazy as ST
+import qualified Control.Monad            as CM
 
 import Data.SBV
 
@@ -169,7 +170,7 @@ puzzle shouldMaximize = print =<< optimizeWith z3{isNonModelVar = (/= finalVar)}
                      let digits = reverse inputs
 
                      -- Each digit is between 1-9
-                     ST.forM_ digits $ \d -> constrain $ d `inRange` (1, 9)
+                     CM.forM_ digits $ \d -> constrain $ d `inRange` (1, 9)
 
                      -- Digits spell out the model number. We minimize/maximize this value as requested:
                      let modelNum = foldl (\sofar d -> 10 * sofar + d) 0 digits

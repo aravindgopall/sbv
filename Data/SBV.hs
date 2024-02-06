@@ -464,7 +464,7 @@ import Data.SBV.Control.Types (SMTReasonUnknown(..), Logic(..))
 import qualified Data.SBV.Utils.CrackNum as CN
 
 import Data.Proxy (Proxy(..))
-import GHC.TypeLits
+import GHC.TypeLits hiding (SChar)
 
 import Prelude hiding((+), (-), (*)) -- to avoid the haddock ambiguity
 
